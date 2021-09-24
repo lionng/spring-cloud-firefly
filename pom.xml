@@ -10,14 +10,21 @@
 
     <!-- add description -->
     <packaging>pom</packaging>
-    <name>spring-cloud-firefly-name</name>
+    <name>spring-cloud-firefly</name>
     <description>Demo project for Spring Cloud</description>
+
+    <!-- add parent -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.5</version>
+        <relativePath/>
+    </parent>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <!-- add version -->
-        <spring.boot-version>2.5.5</spring.boot-version>
         <spring.cloud-version>2020.0.3</spring.cloud-version>
         <java-version>1.8</java-version>
         <lombok-version>1.18.20</lombok-version>
@@ -48,13 +55,14 @@
 
     <!-- add modules -->
     <modules>
-
+        <module>firefly-registry</module>
+        <module>firefly-config</module>
     </modules>
 
     <!-- add build -->
-    <build>
+    <!--<build>-->
 
-    </build>
+    <!--</build>-->
 
     <!-- add repositories -->
     <!--<repositories>-->

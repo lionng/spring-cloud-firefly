@@ -7,3 +7,5 @@
 *.iml
 out
 gen
+/firefly-config/target/
+/firefly-registry/target/
