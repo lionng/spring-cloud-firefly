@@ -17,10 +17,10 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <!-- add version -->
-        <spring-boot.version>2.5.5</spring-boot.version>
-        <spring-cloud.version>2020.0.3</spring-cloud.version>
-        <java.version>1.8</java.version>
-        <lombok.version>1.18.20</lombok.version>
+        <spring.boot-version>2.5.5</spring.boot-version>
+        <spring.cloud-version>2020.0.3</spring.cloud-version>
+        <java-version>1.8</java-version>
+        <lombok-version>1.18.20</lombok-version>
     </properties>
 
     <!-- add dependencies -->
@@ -39,7 +39,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <version>${spring.cloud-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
