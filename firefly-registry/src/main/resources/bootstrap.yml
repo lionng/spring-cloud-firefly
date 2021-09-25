@@ -1,10 +1,14 @@
 spring:
   application:
     name: firefly-registry
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true
+      username: user
+      password: password
 
-# 默认8761
-server:
-  port: 8761
+# port 从配置中心获取
 
 eureka:
   client:

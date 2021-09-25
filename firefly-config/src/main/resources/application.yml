@@ -1,11 +1,13 @@
 spring:
+  application:
+    name: firefly-config
+  profiles:
+    active: native
   cloud:
     config:
       server:
         native:
           search-locations: classpath:/shared
-  profiles:
-    active: native
   security:
     user:
       # 默认user
