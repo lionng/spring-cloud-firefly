@@ -6,9 +6,11 @@ spring:
           search-locations: classpath:/shared
   profiles:
     active: native
-#  security:
-#    user:
-#      password: ${CONFIG_SERVICE_PASSWORD}
+  security:
+    user:
+      # 默认user
+      name: user
+      password: password
 
 server:
   port: 8888
