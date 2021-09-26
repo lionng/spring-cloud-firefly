@@ -1,0 +1,61 @@
+server:
+  port: 4000
+spring:
+  cloud:
+    gateway:
+      #开启 Gateway 服务注册中心服务发现  enabled: true
+      #开启之后我们就可以通过地址去访问服务了，格式如下：
+      #http://网关地址/服务名称(大写)/**    http://localhost:10000/PROVIDER/user/hello
+      discovery:
+        locator:
+          enabled: false
+          #调用默认服务名大写改为小写  http://localhost:10000/provider/user/hello
+          #lower-case-service-id: true
+      #跨域
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            #[allowedOrigins: "*"],可以替换成[allowedOriginPatterns: "*"]或者使用下边的
+            allowedOrigins:
+             - "http://localhost:4000"
+            #用[allowedOrigins]出现When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header.
+            #To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.
+            #allowedOriginPatterns: "*"
+            exposedHeaders:
+              - content-type
+            allowedHeaders:
+              - content-type
+            allowCredentials: true
+            allowedMethods:
+              - GET
+              - OPTIONS
+              - PUT
+              - DELETE
+              - POST
+
+      #路由配置
+      routes:
+        #lb://开头表示从注册中心获取服务
+#        - id: user-service
+#          uri: lb://user-service
+#          predicates:
+#            - Path=/user-service/**
+        - id: example
+          uri: https://example.org
+          predicates:
+            - Path=/example/**
+#logging:
+#  level:
+    #关闭info级别,注册中心客户端会每隔一定时间向注册中心服务端发送心跳,Resolving eureka endpoints via configuration
+#    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: WARN
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true  # 采用ip注册
+    #定义实例ID格式
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+
+

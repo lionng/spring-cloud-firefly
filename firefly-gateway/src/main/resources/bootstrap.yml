@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: firefly-gateway
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true
+      username: user
+      password: password
+
+# port 从配置中心获取
+

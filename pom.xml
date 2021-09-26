@@ -57,6 +57,7 @@
     <modules>
         <module>firefly-registry</module>
         <module>firefly-config</module>
+        <module>firefly-gateway</module>
     </modules>
 
     <!-- add build -->
