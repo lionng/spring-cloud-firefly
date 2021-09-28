@@ -25,9 +25,11 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <!-- add version -->
-        <spring.cloud-version>2020.0.3</spring.cloud-version>
-        <java-version>1.8</java-version>
-        <lombok-version>1.18.20</lombok-version>
+        <spring.boot.version>2.5.5</spring.boot.version>
+        <spring.cloud.version>2020.0.3</spring.cloud.version>
+        <java.version>1.8</java.version>
+        <lombok.version>1.18.20</lombok.version>
+        <spring.cloud.starter.oauth2.version>2.2.5.RELEASE</spring.cloud.starter.oauth2.version>
     </properties>
 
     <!-- add dependencies -->
@@ -35,7 +37,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -46,7 +48,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring.cloud-version}</version>
+                <version>${spring.cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -58,6 +60,7 @@
         <module>firefly-registry</module>
         <module>firefly-config</module>
         <module>firefly-gateway</module>
+        <module>firefly-auth</module>
     </modules>
 
     <!-- add build -->
