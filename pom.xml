@@ -61,6 +61,7 @@
         <module>firefly-config</module>
         <module>firefly-gateway</module>
         <module>firefly-auth</module>
+        <module>demo</module>
     </modules>
 
     <!-- add build -->

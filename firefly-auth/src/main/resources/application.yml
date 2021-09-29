@@ -30,3 +30,12 @@ logging:
           descriptor:
             sql:
               BasicBinder: trace
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true  # 采用ip注册
+    #定义实例ID格式
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
